@@ -9,8 +9,8 @@ produces a generic design. This skill breaks the screen into parts first
 for each part, crops each reference down to just that part, pins the crops on a
 reference board in Figma, and builds the screen part by part from them.
 
-Works in `web` and `ios` mode, and builds either straight into code or as a
-Figma design. The reference board is always in Figma.
+Works in `web` and `ios` mode. Builds straight into code by default, or as a
+Figma design when asked. The reference board is always in Figma.
 
 ## Needs
 
@@ -29,7 +29,7 @@ ln -s ~/refero-parts-skill/skills/refero-parts ~/.claude/skills/refero-parts
 
 ```text
 /refero-parts orders dashboard for a small ecommerce admin, web, in <figma url>
-/refero-parts rebuild this frame part by part: <figma frame url>
+/refero-parts as a figma mockup: pricing page for a studio site, web, in <figma url>
 /refero-parts habit tracker home screen, ios
 ```
 

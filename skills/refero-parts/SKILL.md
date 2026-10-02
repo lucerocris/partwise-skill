@@ -42,7 +42,7 @@ call), ImageMagick, curl, and a scratch folder.
 | **Screen** | What it is and what the user does on it, in one sentence. |
 | **Mode** | `web` or `ios`. Named by the user, else inferred: a frame under ~500px wide, or "app", "tab bar", "sheet" mean `ios`. Both wanted: run once per mode. |
 | **Input** | A text brief (build new), or an existing Figma frame (screenshot it and decompose what is there). |
-| **Target** | `code` or `figma`: where the screen itself gets built. `code` when the user is working in a codebase or wants an implementation; `figma` when the design is the deliverable (a mockup, client work). Never both: building in Figma and then again in code pays for the screen twice. |
+| **Target** | Where the screen itself gets built. **`code` by default.** `figma` only when the user asks for a Figma design or mockup. Never both: building in Figma and then again in code pays for the screen twice. With no codebase in the working directory, build `code` as a new standalone project rather than switching to Figma. |
 | **File** | Figma file and page for the reference board (and the screen, for target `figma`). None given: `create_new_file`. |
 
 ## 2. Lock the direction once
