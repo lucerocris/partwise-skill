@@ -1,6 +1,6 @@
 ---
 name: refero-parts
-description: Part-by-part design inspiration from Refero, built in Figma. Instead of searching Refero for "a page like mine", break the screen into parts (sidebar, stat card, table, form, modal, tab bar...), find three real-product references for EACH part, crop each reference down to just that part, pin the crops on a reference board in Figma, then build the screen part by part from them. Use when designing or redesigning a screen, section or component in Figma with Refero connected, for web or iOS, or when the user says "find inspiration for this card / sidebar / section", "break it down", "part by part", "reference board", or complains that Refero results are too generic or page-level. Needs the Refero MCP and the Figma MCP.
+description: Part-by-part design inspiration from Refero, built in code or in Figma. Instead of searching Refero for "a page like mine", break the screen into parts (sidebar, stat card, table, form, modal, tab bar...), find three real-product references for EACH part, crop each reference down to just that part, pin the crops on a reference board in Figma, then build the screen part by part from them, directly in the codebase or as a Figma design. Use when designing, redesigning or implementing a screen, section or component with Refero connected, for web or iOS, or when the user says "find inspiration for this card / sidebar / section", "break it down", "part by part", "reference board", or complains that Refero results are too generic or page-level. Needs the Refero MCP and the Figma MCP.
 ---
 
 # Refero Parts
@@ -42,15 +42,17 @@ call), ImageMagick, curl, and a scratch folder.
 | **Screen** | What it is and what the user does on it, in one sentence. |
 | **Mode** | `web` or `ios`. Named by the user, else inferred: a frame under ~500px wide, or "app", "tab bar", "sheet" mean `ios`. Both wanted: run once per mode. |
 | **Input** | A text brief (build new), or an existing Figma frame (screenshot it and decompose what is there). |
-| **File** | Target Figma file and page. None given: `create_new_file`. |
+| **Target** | `code` or `figma`: where the screen itself gets built. `code` when the user is working in a codebase or wants an implementation; `figma` when the design is the deliverable (a mockup, client work). Never both: building in Figma and then again in code pays for the screen twice. |
+| **File** | Figma file and page for the reference board (and the screen, for target `figma`). None given: `create_new_file`. |
 
 ## 2. Lock the direction once
 
 Decide color, type, radius, spacing density and elevation for the whole screen
 as a short token list. Source, first that applies:
 
-1. **The file's own design system** (variables, styles, built screens). Use it;
-   research nothing.
+1. **What already exists.** Target `code`: the codebase's tokens, theme and
+   components. Target `figma`: the file's variables, styles and built
+   screens. Use it; research nothing.
 2. **Web:** one `refero_search_styles` query describing the feel ("calm
    neutral admin with one accent"), `response_format: "md"`, then
    `refero_get_style` on the single best hit. Styles come from marketing
@@ -127,13 +129,19 @@ When the reports are in:
 
 Read `references/board.md` and build the board from the reports: one row per
 part, crops with product name (linked to its Refero page) and Took line. The
-board goes on the same page as the screen. For an existing frame it lands to
-the frame's right; for a new build it goes first and the script returns where
-the screen goes.
+board is built for both targets: it is cheap, and it is the record of where
+each part came from.
+
+Target `figma`: the board goes on the same page as the screen. For an
+existing frame it lands to the frame's right; for a new build it goes first
+and the script returns where the screen goes.
 
 ## 6. Build part by part, then assemble
 
-Read `references/build.md`: it has the `use_figma` rules this skill depends
+**Target `code`:** read `references/code.md` and build in the codebase. Skip
+the rest of this step.
+
+**Target `figma`:** read `references/build.md`: it has the `use_figma` rules this skill depends
 on, screen skeletons per mode, fonts and icons. That is enough to build with;
 load the larger `figma-use` skill only if a script fails twice on the same
 thing.
@@ -148,7 +156,7 @@ mismatches toward the direction lock, not toward the loudest reference.
 
 ## 7. Check and report
 
-One screenshot of the built screen. Check:
+One screenshot of the built screen (the running app for target `code`). Check:
 
 - **Text rendered.** A font can load and still draw nothing (see `build.md`).
 - **Anatomy.** Each part shows its primary's structure, and every Took line
