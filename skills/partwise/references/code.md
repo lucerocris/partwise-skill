@@ -35,15 +35,10 @@ Figma step. The references were saved in the project in step 5.
 
 ## Check it running
 
-Do not judge the result from the source. Run the app the way the project
-runs, take a screenshot of the screen, and compare it with each part's crop
+Check in bounded passes, as SKILL.md describes: run the app the way the
+project runs, one batch of screenshots, and compare with each part's crop
 sheet:
 
 - each part shows its primary's structure, and every "Taken" line in the
   README is visible;
-- no overlap, clipped text, or controls hidden under a fixed bar;
-- web: check one narrow width as well as desktop;
-- iOS: safe areas, and the last row reachable above the tab bar.
-
-If the app cannot be run here, say so in the report rather than claiming the
-screen was checked.
+- the craft floor and the platform page hold.

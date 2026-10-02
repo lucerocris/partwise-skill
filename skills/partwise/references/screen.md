@@ -1,37 +1,17 @@
----
-name: refero-parts
-description: Part-by-part design inspiration from Refero, built in code or in Figma. Instead of searching Refero for "a page like mine", break the screen into parts (sidebar, stat card, table, form, modal, tab bar...), find three real-product references for EACH part, crop each reference down to just that part, save the crops beside the work (a references folder in the project, or a board in Figma), then build the screen part by part from them, directly in the codebase or as a Figma design. Use when designing, redesigning or implementing a screen, section or component with Refero connected, for web or iOS, or when the user says "find inspiration for this card / sidebar / section", "break it down", "part by part", "reference board", or complains that Refero results are too generic or page-level. Needs the Refero MCP; the Figma MCP only for Figma output.
----
+# Building a screen or a part
 
-# Refero Parts
-
-Refero indexes whole screens. Ask it for "a dashboard" and the design that
-comes out is the average of ten dashboards. But its search answers
-component-level questions well, so the unit of research here is the **part**:
-each part of the screen gets its own queries, its own three references and its
-own crops. The page is only assembled at the end.
-
-Two rules keep the result from turning into a collage:
-
-> **1. Structure comes from the part references. Styling comes from one
-> direction lock.** Structure is what is in the part, in what order, where it
-> sits, how it stacks, what shape it has, how states show. Styling is color,
-> typeface, fill, radius, shadow. A reference never brings its own styling.
->
-> **2. Every reference is saved, cropped, next to what it produced**, with a
-> line saying what was taken from it or why it was rejected. In the project
-> for target `code`, on a board in Figma for target `figma`.
-
-Run autonomously. Do not ask the user to approve the part list or the
-references; they are recorded with the references and can be corrected
-afterwards. Ask only for what no default can fill: what the screen is for, or
-(target `figma`) which Figma file to use.
+The pipeline for jobs `build` and `part`. Mode, target and the two rules come
+from SKILL.md.
 
 **Keep it cheap.** Search results and screenshots are the bulk of the cost and
-none of them are needed after a part's references are chosen. So the research
-for each part is done by a scout (step 4) that returns a few lines, and you
-read only what the steps below name. Do not read `scout.md` or `parts.md`
-yourself unless you are scouting inline.
+none of them are needed once a part's references are chosen. The research for
+each part is done by a scout (step 4) that returns a few lines. Do not read
+`scout.md` or `parts.md` yourself unless you are scouting inline.
+
+Run autonomously. Do not ask the user to approve the part list or the
+references; they are saved with the references and can be corrected
+afterwards. Ask only for what no default can fill: what the screen is for, or
+(target `figma`) which Figma file to use.
 
 Needs: Refero MCP tools (load deferred ones in a single ToolSearch call),
 ImageMagick, curl, and a scratch folder. Figma MCP tools only for target
@@ -42,13 +22,14 @@ ImageMagick, curl, and a scratch folder. Figma MCP tools only for target
 | | How to decide |
 |---|---|
 | **Screen** | What it is and what the user does on it, in one sentence. |
-| **Mode** | `web` or `ios`. Named by the user, else inferred: a frame under ~500px wide, or "app", "tab bar", "sheet" mean `ios`. Both wanted: run once per mode. |
 | **Input** | A text brief (build new), or an existing Figma frame (screenshot it and decompose what is there). |
-| **Target** | Where the screen itself gets built. **`code` by default.** `figma` only when the user asks for a Figma design or mockup. Never both: building in Figma and then again in code pays for the screen twice. With no codebase in the working directory, build `code` as a new standalone project rather than switching to Figma. |
 | **File** | Target `figma` only: the Figma file and page. None given: `create_new_file`. |
 | **Existing references** | Target `code`: look for `docs/references/<screen>/README.md` in the project. Parts already recorded there are reused as they are: take the spec from the README and look at the saved crops with one `scripts/refsheet.sh` sheet. Scout only parts that are new, or that the user wants redone. |
 
 ## 2. Lock the direction once
+
+Job `part` in an existing project: the direction is whatever the project
+already uses. Skip to step 3.
 
 Decide color, type, radius, spacing density and elevation for the whole screen
 as a short token list. Source, first that applies:
@@ -73,6 +54,8 @@ density. Decide them and list them as **guessed** with the references.
 Atoms (buttons, inputs, chips, icons) are defined here, never searched.
 
 ## 3. Break the screen into parts
+
+Job `part`: there is one part. Write its row and go to step 4.
 
 3 to 7 parts, each with a name, a one-line job, its content, and its states:
 
@@ -143,7 +126,7 @@ candidates) and write a `README.md`:
 # Orders dashboard · references (web)
 
 Direction: project theme (`src/styles/tokens.css`). Guessed: status colors.
-Researched 2026-10-03 with refero-parts.
+Researched 2026-10-03 with partwise.
 
 ## Sidebar
 Primary nav, 6 sections, two with children; workspace switcher.
@@ -177,8 +160,8 @@ returns where the screen goes.
 **Target `code`:** read `references/code.md` and build in the codebase. Skip
 the rest of this step.
 
-**Target `figma`:** read `references/build.md`: it has the `use_figma` rules this skill depends
-on, screen skeletons per mode, fonts and icons. That is enough to build with;
+**Target `figma`:** read `references/figma.md`: it has the `use_figma` rules
+this skill depends on, screen skeletons per mode, fonts and icons. That is enough to build with;
 load the larger `figma-use` skill only if a script fails twice on the same
 thing.
 
@@ -192,9 +175,10 @@ mismatches toward the direction lock, not toward the loudest reference.
 
 ## 7. Check and report
 
-One screenshot of the built screen (the running app for target `code`). Check:
+Check in bounded passes, as SKILL.md describes. On top of the craft floor,
+look for:
 
-- **Text rendered.** A font can load and still draw nothing (see `build.md`).
+- **Text rendered.** A font can load and still draw nothing (see `figma.md`).
 - **Anatomy.** Each part shows its primary's structure, and every Took line
   saved with the references is visible in the build. Fix the part or reword
   the line.
