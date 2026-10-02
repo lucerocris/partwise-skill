@@ -1,6 +1,6 @@
 ---
 name: refero-parts
-description: Part-by-part design inspiration from Refero, built in code or in Figma. Instead of searching Refero for "a page like mine", break the screen into parts (sidebar, stat card, table, form, modal, tab bar...), find three real-product references for EACH part, crop each reference down to just that part, pin the crops on a reference board in Figma, then build the screen part by part from them, directly in the codebase or as a Figma design. Use when designing, redesigning or implementing a screen, section or component with Refero connected, for web or iOS, or when the user says "find inspiration for this card / sidebar / section", "break it down", "part by part", "reference board", or complains that Refero results are too generic or page-level. Needs the Refero MCP and the Figma MCP.
+description: Part-by-part design inspiration from Refero, built in code or in Figma. Instead of searching Refero for "a page like mine", break the screen into parts (sidebar, stat card, table, form, modal, tab bar...), find three real-product references for EACH part, crop each reference down to just that part, save the crops beside the work (a references folder in the project, or a board in Figma), then build the screen part by part from them, directly in the codebase or as a Figma design. Use when designing, redesigning or implementing a screen, section or component with Refero connected, for web or iOS, or when the user says "find inspiration for this card / sidebar / section", "break it down", "part by part", "reference board", or complains that Refero results are too generic or page-level. Needs the Refero MCP; the Figma MCP only for Figma output.
 ---
 
 # Refero Parts
@@ -18,13 +18,14 @@ Two rules keep the result from turning into a collage:
 > sits, how it stacks, what shape it has, how states show. Styling is color,
 > typeface, fill, radius, shadow. A reference never brings its own styling.
 >
-> **2. Every reference is shown, cropped, next to what it produced**, with a
-> line saying what was taken from it or why it was rejected.
+> **2. Every reference is saved, cropped, next to what it produced**, with a
+> line saying what was taken from it or why it was rejected. In the project
+> for target `code`, on a board in Figma for target `figma`.
 
 Run autonomously. Do not ask the user to approve the part list or the
-references; they are recorded on the board and can be corrected afterwards.
-Ask only for what no default can fill: what the screen is for, or which Figma
-file to use.
+references; they are recorded with the references and can be corrected
+afterwards. Ask only for what no default can fill: what the screen is for, or
+(target `figma`) which Figma file to use.
 
 **Keep it cheap.** Search results and screenshots are the bulk of the cost and
 none of them are needed after a part's references are chosen. So the research
@@ -32,8 +33,9 @@ for each part is done by a scout (step 4) that returns a few lines, and you
 read only what the steps below name. Do not read `scout.md` or `parts.md`
 yourself unless you are scouting inline.
 
-Needs: Refero and Figma MCP tools (load deferred ones in a single ToolSearch
-call), ImageMagick, curl, and a scratch folder.
+Needs: Refero MCP tools (load deferred ones in a single ToolSearch call),
+ImageMagick, curl, and a scratch folder. Figma MCP tools only for target
+`figma`.
 
 ## 1. Read the task
 
@@ -43,7 +45,8 @@ call), ImageMagick, curl, and a scratch folder.
 | **Mode** | `web` or `ios`. Named by the user, else inferred: a frame under ~500px wide, or "app", "tab bar", "sheet" mean `ios`. Both wanted: run once per mode. |
 | **Input** | A text brief (build new), or an existing Figma frame (screenshot it and decompose what is there). |
 | **Target** | Where the screen itself gets built. **`code` by default.** `figma` only when the user asks for a Figma design or mockup. Never both: building in Figma and then again in code pays for the screen twice. With no codebase in the working directory, build `code` as a new standalone project rather than switching to Figma. |
-| **File** | Figma file and page for the reference board (and the screen, for target `figma`). None given: `create_new_file`. |
+| **File** | Target `figma` only: the Figma file and page. None given: `create_new_file`. |
+| **Existing references** | Target `code`: look for `docs/references/<screen>/README.md` in the project. Parts already recorded there are reused as they are: take the spec from the README and look at the saved crops with one `scripts/refsheet.sh` sheet. Scout only parts that are new, or that the user wants redone. |
 
 ## 2. Lock the direction once
 
@@ -65,7 +68,7 @@ as a short token list. Source, first that applies:
    margins, safe areas.
 
 No source covers status colors, surface steps (canvas vs card) or data
-density. Decide them and list them as **guessed** on the board.
+density. Decide them and list them as **guessed** with the references.
 
 Atoms (buttons, inputs, chips, icons) are defined here, never searched.
 
@@ -125,16 +128,49 @@ When the reports are in:
 - **Resolve clashes between parts** in favor of the direction lock.
 - A part reported with fewer than three references stays that way.
 
-## 5. Put the references in Figma
+## 5. Save the references
 
-Read `references/board.md` and build the board from the reports: one row per
-part, crops with product name (linked to its Refero page) and Took line. The
-board is built for both targets: it is cheap, and it is the record of where
-each part came from.
+The scratch folder does not survive the session. The references are the
+record of where each part came from and what a later revision starts from, so
+they are saved before anything is built.
 
-Target `figma`: the board goes on the same page as the screen. For an
-existing frame it lands to the frame's right; for a new build it goes first
-and the script returns where the screen goes.
+**Target `code`:** into the project, next to the code they produce. Use
+`docs/references/<screen-slug>/` unless the project keeps design notes
+elsewhere. Copy in the three crops of each part (not the contact sheets or
+candidates) and write a `README.md`:
+
+```markdown
+# Orders dashboard · references (web)
+
+Direction: project theme (`src/styles/tokens.css`). Guessed: status colors.
+Researched 2026-10-03 with refero-parts.
+
+## Sidebar
+Primary nav, 6 sections, two with children; workspace switcher.
+Built in `src/components/Sidebar.tsx`.
+
+**Primary: Understory.** Borrow: Linear. Rejected: Dropbox.
+
+| | Product | Taken |
+|---|---|---|
+| ![](sidebar-understory.png) | [Understory](https://refero.design/pages/...) | Switcher pinned to the bottom edge behind a hairline |
+| ![](sidebar-linear.png) | [Linear](https://refero.design/pages/...) | Pinned favorites above the main list |
+| ![](sidebar-dropbox.png) | [Dropbox](https://refero.design/pages/...) | Considered, not taken: icon-only rail hides the nested groups |
+```
+
+Fill in each part's "Built in" path after step 6. When adding parts to an
+existing README, add sections; leave the others as they are.
+
+These are screenshots of other companies' products. If the folder is not
+already tracked by git, add it to `.gitignore` so it is not published by
+accident, and say so in the final report; the user commits it if they want
+it in the repo.
+
+**Target `figma`:** read `references/board.md` and build the board from the
+reports: one row per part, crops with product name (linked to its Refero
+page) and Took line, on the same page as the screen. For an existing frame it
+lands to the frame's right; for a new build it goes first and the script
+returns where the screen goes.
 
 ## 6. Build part by part, then assemble
 
@@ -160,13 +196,14 @@ One screenshot of the built screen (the running app for target `code`). Check:
 
 - **Text rendered.** A font can load and still draw nothing (see `build.md`).
 - **Anatomy.** Each part shows its primary's structure, and every Took line
-  on the board is visible in the build. Fix the part or reword the line.
+  saved with the references is visible in the build. Fix the part or reword
+  the line.
 - **Collisions.** Overlap, clipped text, and controls hidden under a tab bar
   or floating button.
 - **One styling.** No part still wearing its reference's colors or radius.
 
-Finish in chat with a short trace, the Figma link, the direction source and
-what was guessed:
+Finish in chat with a short trace, where the references were saved (folder
+path, or Figma link), the direction source and what was guessed:
 
 ```text
 Part         | Primary    | Borrowed from     | Notes
@@ -184,5 +221,6 @@ Orders table | Attio      | Retool            | only 2 good references
 - **A plain primary gives a plain part.** If a part comes back ordinary,
   re-scout it asking for a more distinctive arrangement.
 - **Keep to 7 parts.** Split a bigger screen into two runs.
-- **References are other companies' products**, for study on a working board.
-  Never ship their copy, logos or screenshots in the design.
+- **References are other companies' products**, for study. Never ship their
+  copy, logos or screenshots in the design, and do not publish the reference
+  folder without the user choosing to.

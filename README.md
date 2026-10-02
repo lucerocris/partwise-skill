@@ -6,16 +6,18 @@ The usual agent workflow with [Refero](https://refero.design) is "find screens
 like the page I'm building, then build it". That returns generic pages and
 produces a generic design. This skill breaks the screen into parts first
 (sidebar, stat card, table, tab bar...), finds three real-product references
-for each part, crops each reference down to just that part, pins the crops on a
-reference board in Figma, and builds the screen part by part from them.
+for each part, crops each reference down to just that part, saves the crops
+beside the work, and builds the screen part by part from them.
 
-Works in `web` and `ios` mode. Builds straight into code by default, or as a
-Figma design when asked. The reference board is always in Figma.
+Works in `web` and `ios` mode. Builds straight into code by default and saves
+the references in the project (`docs/references/<screen>/`, gitignored unless
+you commit it). When asked for a Figma design instead, it builds in Figma
+with a reference board beside the screen.
 
 ## Needs
 
 - [Refero MCP](https://refero.design/mcp)
-- Figma MCP (remote server, with `use_figma` and `upload_assets`)
+- Figma MCP (remote server, with `use_figma` and `upload_assets`), only for Figma output
 - ImageMagick and curl
 
 ## Install

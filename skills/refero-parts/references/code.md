@@ -1,7 +1,7 @@
 # Building the screen in code
 
-For target `code`. The part reports and crop sheets are the design; there is
-no Figma screen in between.
+For target `code`. The part reports and crops are the design; there is no
+Figma step. The references were saved in the project in step 5.
 
 ## Before writing anything
 
@@ -19,8 +19,9 @@ no Figma screen in between.
 
 ## Build
 
-- **One component per part, named after the part** on the board (`Sidebar`,
-  `StatCard`, `OrdersTable`), so a board row maps to a file.
+- **One component per part, named after the part** in the references README
+  (`Sidebar`, `StatCard`, `OrdersTable`), so each section maps to a file.
+  Write that file's path into the section's "Built in" line.
 - **Follow the part spec for structure**: what is in it, order, position,
   stacking, shape. Keep the crop sheet for that part open while writing it.
 - **Build the states the part listed** (empty, loading, selected, active), not
@@ -38,8 +39,8 @@ Do not judge the result from the source. Run the app the way the project
 runs, take a screenshot of the screen, and compare it with each part's crop
 sheet:
 
-- each part shows its primary's structure, and every Took line on the board
-  is visible;
+- each part shows its primary's structure, and every "Taken" line in the
+  README is visible;
 - no overlap, clipped text, or controls hidden under a fixed bar;
 - web: check one narrow width as well as desktop;
 - iOS: safe areas, and the last row reachable above the tab bar.
