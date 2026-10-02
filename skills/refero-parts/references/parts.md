@@ -4,7 +4,11 @@ Parts that search well in Refero, with query wording that returns the part
 rather than the page around it. Use these as starting points and add the
 screen's real content and state to the query.
 
-Query formula: **part + its distinguishing anatomy + content or state**.
+Query formula: **part + its distinguishing anatomy + arrangement or state**.
+Leave the user's subject matter out (orders, habits, invoices): search matches
+on those nouns and returns whole screens about the subject instead of the
+part. The same goes for loose words like "plus" or "streak" on iOS, which
+match unrelated screens.
 
 ## Web
 
@@ -35,7 +39,7 @@ Query formula: **part + its distinguishing anatomy + content or state**.
 
 | Part | Queries that work |
 |---|---|
-| Tab bar | floating tab bar with center action · bottom tab bar with badges |
+| Tab bar | floating pill tab bar with icon and label · bottom tab bar with raised center button (filter hits by the `Tabbar` tag; these queries also match any screen with a floating button) |
 | Navigation bar | large title navigation bar with search · navigation bar with segmented control |
 | List row | settings list rows grouped with icons · list row with thumbnail, subtitle and chevron · swipe actions on list row |
 | Card | summary card with ring progress · content card with image and bookmark · horizontal card carousel |
@@ -63,8 +67,11 @@ because the query describes something only some screens have.
 
 ## When a search disappoints
 
-- **Wrong part matched:** the query leaned on a page word. Remove "dashboard",
-  "settings", "page" and describe the part's contents instead.
+- **Wrong part matched:** the query leaned on a page word or a subject noun.
+  Remove "dashboard", "settings", "page" and the user's content words, and
+  describe how the part is arranged instead.
+- **Right subject, wrong side:** consumer screens instead of admin ones (order
+  history instead of an orders table). Add "admin" or "back-office".
 - **All one product:** take the best one, then page 2, or
   `refero_get_similar_screens` on it.
 - **Nothing close:** widen the part by one level (search "detail side panel"

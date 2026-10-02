@@ -39,4 +39,5 @@ ln -s ~/refero-parts-skill/skills/refero-parts ~/.claude/skills/refero-parts
 | `skills/refero-parts/SKILL.md` | The pipeline |
 | `skills/refero-parts/references/parts.md` | Catalog of parts and query wording, per mode |
 | `skills/refero-parts/references/board.md` | Figma script and upload steps for the reference board |
+| `skills/refero-parts/references/build.md` | Figma build rules, screen skeletons per mode, fonts, icons |
 | `skills/refero-parts/scripts/refcrop.sh` | Crops a part out of a screenshot by percentage box |
