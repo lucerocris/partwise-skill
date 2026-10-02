@@ -33,8 +33,6 @@ Rules specific to building for the browser. Read with `craft.md`.
 
 - Curly quotes, a real ellipsis character, non-breaking spaces between a
   number and its unit.
-- `text-wrap: balance` on headings, `pretty` on short paragraphs.
-- `font-variant-numeric: tabular-nums` where numbers align or update.
 - Truncate with an ellipsis only when the full text is reachable another way.
 
 ## Theme
@@ -49,10 +47,12 @@ Rules specific to building for the browser. Read with `craft.md`.
 - CSS transitions before keyframes: they can be interrupted midway.
 - Popovers and menus grow from the thing that opened them. Nothing animates
   from scale 0; start near 0.95 with opacity.
-- Wrap movement in `@media (prefers-reduced-motion: no-preference)`.
 
 ## Checking
 
-Use whatever the project already has for running and viewing the app. With
-browser automation available: load the page, wait for it to settle, screenshot
-at 1440 and 390, then look. Check the browser console for errors while there.
+Use whatever the project already has for running and viewing the app. Plain
+static files: `python3 -m http.server` in the folder. With browser automation
+available: load the page, wait for it to settle, screenshot at 1440 and 390,
+then look. Browser tools often only write inside their own folder; save
+there. Check the console for errors while there, ignoring a missing favicon
+and dev-server noise.

@@ -28,13 +28,15 @@ Do not ask; pick, and escalate later if it turns out too small.
 
 | Job | When | Research | Read |
 |---|---|---|---|
-| **tweak** | Changing something that exists: spacing, a state, copy, alignment, one property, a bug in the look | None | `craft.md` + platform page |
+| **tweak** | Changing something that exists: spacing, a state, copy, alignment, one property, a bug in the look | None | `craft.md` + platform page. Copy only: just the Words section of `craft.md`. A single value the user named: nothing |
 | **part** | One new or redesigned component or section: a card, a sidebar, a form, a tab bar | One scout | `screen.md` + `craft.md` + platform page |
-| **build** | A new screen, or a screen redesigned from scratch | One scout per part | `screen.md` + `craft.md` + platform page |
+| **build** | A new screen, or a screen redesigned from scratch. A flow of several screens is one build per screen, sharing one direction | One scout per part | `screen.md` + `craft.md` + platform page |
 | **review** | "What's wrong with this", critique, audit. Reports; changes nothing | None | `review.md` + `craft.md` + platform page |
 | **polish** | "Make this better", pre-ship pass on something already built | None, unless a part's structure is the problem | `review.md` + `craft.md` + platform page |
 
 All of these are in `references/`. Platform page: `web.md` or `ios.md`.
+`screen.md` names the further files it needs as it goes (`code.md`, or
+`figma.md` and `board.md` for a Figma mockup); read those only when it says.
 
 - A tweak that keeps growing is a part. A part whose neighbors all need
   redoing is a build. Say so and switch.
@@ -47,14 +49,14 @@ All of these are in `references/`. Platform page: `web.md` or `ios.md`.
 
 | | How to decide |
 |---|---|
-| **Mode** | `web` or `ios`. Named by the user, else from the project (SwiftUI, Flutter, React Native are `ios`), else from the request: "app", "tab bar", "sheet" mean `ios`. Both wanted: do the job once per mode. |
+| **Mode** | `web` or `ios`. `ios` means any native mobile app; its page is written for iPhone, so on an Android-first project keep its structure and touch rules and use Material's controls and type. Named by the user, else from the project (SwiftUI, Flutter, React Native are `ios`), else from the request: "app", "tab bar", "sheet" mean `ios`. No project and no cue: ask, it is one short question and everything depends on it. Both wanted: do the job once per mode. |
 | **Target** | Where the work lands. **`code` by default.** `figma` only when the user asks for a Figma design or mockup. Never both: designing in Figma and then building in code pays for the screen twice. No codebase in the working directory: build `code` as a new standalone project. |
 | **Direction** | The visual decisions in force. In an existing project: its tokens, theme and components, as they are. Only a new project, or a redesign the user asked for, gets a new direction (`screen.md` step 2). |
 
 ## Before any UI edit
 
-Read `references/craft.md` and the platform page for the mode. Not earlier,
-and not for a job that edits nothing but copy or one value.
+Read `references/craft.md` and the platform page for the mode, as the job
+table says. Not earlier. Review reads them too: they are what it judges by.
 
 ## Checking
 
@@ -67,6 +69,11 @@ passes, because open-ended self-review is where design work burns money:
 3. Fix everything found, in one batch.
 4. At most one more look. Then stop and report what is left.
 
+Review and polish begin with a look at the thing as it is; that one does not
+count against the limit. Hover, focus and pressed states do not show in a
+screenshot: check them from the source, or with one scripted screenshot of
+one representative control, not one per control.
+
 If the app cannot be run here, say so. Do not claim a screen was checked from
 its source.
 
@@ -74,7 +81,7 @@ its source.
 
 - Marketing site, landing page, portfolio, agency or studio site: also load
   `studio-design` if it is installed. It owns section order, page skeleton
-  and copy voice there.
+  and copy voice there. For a whole page or section, not a single component.
 - Online store: product page, collection, cart, checkout: also load
   `commerce-design` if it is installed.
 
@@ -85,4 +92,5 @@ Where those skills name a specific value, they win.
 
 Short, in chat: the job that ran, what changed and where, what was checked
 and how (rendered or not), anything guessed, and anything found but left
-alone. For `build` and `part`, the trace table from `screen.md`.
+alone. `screen.md` and `review.md` give the exact shape for their jobs; use
+theirs.

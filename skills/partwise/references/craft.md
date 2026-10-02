@@ -7,7 +7,9 @@ note the exception and move on.
 
 ## Type
 
-- Body text 16px or larger on web. Line length 65-75 characters, 80 at most.
+- Text meant for reading: 16px or larger on web, lines of 65-75 characters,
+  80 at most. Product UI (tables, lists, labels) may run 13-14px for
+  secondary text; inputs stay at 16px.
 - One typeface, two at most. Hierarchy from size and weight steps you can see
   at a glance, not from many near-identical sizes.
 - Headings: balanced line breaks (`text-wrap: balance`), tighter tracking as
@@ -53,7 +55,9 @@ Empty states say what belongs here and offer the action that fills it.
 - Every animation has a reason: showing where something came from, confirming
   an action, drawing attention once. No reason, no animation.
 - 100-300ms for interface changes, ease-out. Nothing eases in.
-- Animate transform and opacity only. Never `transition: all`.
+- Never animate layout properties (width, height, top, margin, padding);
+  move and scale with transform. Color, background and opacity are fine.
+  Never `transition: all`.
 - Things the user does constantly, or triggers from the keyboard, do not
   animate.
 - Respect reduced motion.
@@ -62,7 +66,9 @@ Empty states say what belongs here and offer the action that fills it.
 
 - A visible focus ring on everything focusable. Never remove an outline
   without replacing it.
-- Targets at least 44 by 44.
+- Targets at least 44 by 44 on touch screens and phone widths. With a
+  pointer, 24 by 24 at least, with space between neighbors, so dense tables
+  stay dense.
 - Real elements: a button is a button, a link is a link, an input has a
   label.
 - Everything reachable and usable by keyboard on web.
@@ -95,5 +101,11 @@ or a chosen reference specifically calls for one:
 
 ## Last look
 
-Before calling it done: spend boldness in one place, and take out one thing
-that is only there for decoration.
+Before calling it done, take out decoration that does no work. For a new
+screen or part, also spend boldness in one place: one thing a user would
+remember, and everything else quiet.
+
+When the project's own tokens fail a check here (a border too faint, a text
+color too light), keep the token and report it; do not patch around it. When
+the project has no token for something you need, derive it from the ones it
+has and say so.

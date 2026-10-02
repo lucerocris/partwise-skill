@@ -3,8 +3,8 @@
 Two jobs on something that already exists. **Review** reports and changes
 nothing. **Polish** fixes. Neither runs reference research.
 
-Both start the same way: look at the rendered thing (SKILL.md, Checking, step
-2: one batch of screenshots), then read the code for what the screenshots
+Both start the same way: look at the rendered thing as it is (one batch of
+screenshots, as in SKILL.md, Checking), then read the code for what the screenshots
 raised. Measure against `craft.md`, the platform page, and the project's own
 tokens and components.
 
@@ -58,25 +58,33 @@ Review first, without writing the report. Then fix, in this order, so the
 effort goes where it matters and the cleanup does not undo itself:
 
 1. Anything that blocks the task.
-2. Missing states.
+2. Missing states the existing code can reach (focus, hover, disabled, an
+   empty list). States that need logic the screen does not have (loading,
+   failed load) go in the report, not in the code.
 3. Drift from the project's system: replace one-off values with tokens and
    rebuilt pieces with existing components.
 4. Hierarchy and spacing.
 5. Craft floor and platform details.
-6. Remove one thing that is only decoration.
+6. Remove decoration that does no work.
 
 Rules while polishing:
 
 - **Keep the design's identity.** Polish makes it a better version of what it
   is. A new palette, typeface or layout is a redesign, and only happens if
-  asked for.
+  asked for. Where the screen disagrees with the project's tokens, the tokens
+  are the identity: bringing the screen back to them is polish, even when it
+  changes how the screen looks.
+- **Do not edit the token or theme files.** Report what is missing or failing
+  in them.
 - **Do not widen the scope.** Fix what is on the screen asked about. Note
   problems seen elsewhere; do not chase them.
-- **Stress it** before the final look: put realistic worst-case content
-  through each part (the longest name, a one-letter name, an empty list, a
-  list of hundreds, a failed load, a missing image). Use the project's own
-  fixtures or story files if it has them; otherwise swap the data
-  temporarily and put it back.
+- **Stress it** as part of the look after fixing, not as extra rounds: put
+  realistic worst-case content through each part, limited to what this
+  screen can actually be given (the longest name, a one-letter name, an
+  empty list, many rows). Use the project's fixtures or story files if it
+  has them; otherwise swap the data temporarily and put it back. Measuring
+  in the page (does anything overflow or scroll sideways) counts; a
+  screenshot of every case is not needed.
 - Check in bounded passes (SKILL.md): one look, one batch of fixes, at most
   one more look.
 
