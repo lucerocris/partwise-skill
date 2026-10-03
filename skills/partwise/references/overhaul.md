@@ -126,7 +126,10 @@ whole page:
   main block under the title, where people look first; remove repeats from
   pinned bars, side cards and lower sections instead.
 - **Every empty state.** Each "none yet" on the page says what belongs there
-  and offers the next step, whether or not its part was rethought.
+  and offers the next step, whether or not its part was rethought. First
+  check whether a missing value means "none" or "not loaded yet": a page
+  that fills in data after its first paint must not say "not listed" for
+  something that arrives a second later.
 - **The signature** from the brief is visible in the first screen.
 - **Real data at its longest.** Fill each grid, card and row with the
   longest real value it can get. A cell that wraps to three lines makes the

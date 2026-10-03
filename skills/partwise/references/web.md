@@ -28,6 +28,13 @@ Rules specific to building for the browser. Read with `craft.md`.
   open item. Back does what they expect.
 - Toasts and live updates are announced (`aria-live="polite"`).
 - Scrolling areas inside the page set `overscroll-behavior: contain`.
+- Invisible layers still catch clicks. An element or map layer at opacity 0
+  (a hover copy, a faded overlay) takes taps meant for what is under it;
+  leave it out of hit-testing or give it `pointer-events: none`.
+- Changing a file served with a long cache (an `immutable` header on a
+  style, data or font file) needs a new URL, such as a `?v=` query, or
+  returning visitors keep the old file. Check the project's headers config
+  before changing a static asset.
 
 ## Text
 
