@@ -3,7 +3,9 @@
 Find three distinct design directions for a whole product, grounded in real
 products in Refero, and report back. You are given the product, its reader,
 its page types, any words the user used for the feel, constraints that must
-hold, the mode (`web` or `ios`), a scratch folder and the skill's folder.
+hold, any pinned layers that must stay exactly as they are (for example the
+color palette), the mode (`web` or `ios`), a scratch folder and the skill's
+folder.
 
 This is the opposite of part research: here the whole page is the point.
 Look at layout, rhythm, color, type and density across a page, not at one
@@ -38,7 +40,15 @@ would see at a glance: light vs dark, airy vs dense, editorial vs tool-like,
 quiet vs expressive. Three near-identical directions are a failed result.
 
 Each direction gets one **primary source** (a style or an app whose look it
-follows) and up to two secondary ones for specific details. Check each
+follows) and up to two secondary ones for specific details.
+
+**Pinned layers stay fixed in all three directions.** If the palette is
+pinned, the directions differ in everything else (layout, rhythm, type,
+density, shape) and each one uses the pinned colors in its own way: say which
+color takes which role. Prefer sources whose palette is close to the pinned
+one, or whose look does not depend on its colors; a direction that only works
+in its source's colors is a failed result. Write the pinned values, not the
+source's, in the COLOR line. Check each
 direction against the constraints and drop or adjust any that breaks one.
 
 Avoid directions that are the autopilot looks: indigo or violet accent by

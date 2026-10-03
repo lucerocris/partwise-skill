@@ -69,6 +69,9 @@ or whatever the project already uses). Nothing but `frame` changes it.
   marks, color meanings, product promises) so you can strike any. Then it
   writes the new design file, on a branch, and rebuilds the most important
   page in the new direction as proof. Other pages move over one per run.
+- **Pin what should stay**: "frame fresh, keep the colors" (or the type, the
+  logo, the dark theme). Pinned layers keep their exact values; the three
+  directions differ in everything else.
 - Without the words "fresh", "new direction", "new look" or "redesign the
   site", the existing design file always wins.
 

@@ -100,6 +100,12 @@ For an existing project with no design file. Cheap: no Refero.
    a *constraint* (has a reason outside taste: a brand mark, green means
    correct, works without an account, never invent numbers). Style is set
    aside; constraints carry over unless the user strikes them.
+
+   **The user can pin any layer.** "Fresh, but keep the colors" (or the type,
+   the logo, the dark theme, the page skeletons) moves that layer, exactly as
+   it is in the old file and the token files, into the constraints. The fresh
+   direction is then researched around it: everything else changes, the
+   pinned layer does not, and the token values for it are not touched.
 2. **Work on a branch** if the project is a git repo and you are on its main
    branch. A fresh direction touches everything.
 3. **Send one frame scout** (a subagent, mid-tier model, as in `screen.md`
@@ -113,6 +119,7 @@ For an existing project with no design file. Cheap: no Refero.
    Page types: <the list>
    Character hints from the user: <any words they used, or "none">
    Constraints: <the carried-over list, or "none">
+   Pinned layers: <each pinned layer with its actual values, e.g. "color: canvas #0e0f12, surface #17191e, text #f2f2f3, accent #7cc4a4 (primary actions only)", or "none">
    Mode: <web|ios>
    Scratch folder: <scratch>/frame
    Skill folder (<skill>): <skill folder>
