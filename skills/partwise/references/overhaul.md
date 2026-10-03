@@ -28,7 +28,11 @@ Signature: <the one thing on this page a person would remember, tied to the
            timeline; not decoration>
 ```
 
-The signature line is required. Fixing every problem still leaves a page
+The signature line is required, and it must add something the page does not
+already say: a countdown next to "until 10:00 PM" read as the same fact
+twice and moved nothing. Prefer a signature that shows this product's own
+knowledge (for Nook: facts other apps don't have, like outlets or quiet
+hours). Fixing every problem still leaves a page
 that reads as a template: in testing, overhauls raised every score except
 distinctiveness until a signature was chosen up front.
 
@@ -101,7 +105,10 @@ whole page:
 - **Repeats.** The same action or fact appearing more than once in one
   screen (Get directions in the title and in a pinned bar; open status in
   the header, the side card and the hours). Parts that are right alone add
-  up to this; keep each where it does most and remove the rest.
+  up to this. The page's primary action stays in the main block under the
+  title, where people look first; remove repeats from pinned bars, side
+  cards and lower sections instead. (Tested: taking Get directions out of
+  the title to avoid a repeat with the pinned bar cost a point on desktop.)
 - **Every empty state.** Each "none yet" on the page says what belongs there
   and offers the next step, whether or not its part was rethought.
 - **The signature** from the brief is visible in the first screen.
