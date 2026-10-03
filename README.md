@@ -11,6 +11,7 @@ It picks the smallest job that fits the request:
 | `build` | A new screen, or a full redesign |
 | `review` | A critique. Reports, changes nothing |
 | `polish` | A pre-ship pass on something already built |
+| `ux` | Research only: journeys as they are, three real flows each from Refero, ranked findings, a recommended flow, and what to test with real people. Saved to `docs/ux/` for `site` and `overhaul` to use |
 | `site` | The whole product, top down: page map and flows, art direction, design system (tokens, components, every state, a states sheet), and a page plan run as overhauls. `site next` continues the plan |
 | `overhaul` | One page, the whole process from one line: context and product kind, art direction, which parts need rethinking, then build and check |
 | `frame` | The site-level design: reader, character, page skeletons, rhythm, color, type, voice, in one design file. Extracted from what is built, or researched; and a fresh direction for an existing site when you ask for one |
@@ -48,6 +49,7 @@ ln -s ~/partwise-skill/skills/partwise ~/.claude/skills/partwise
 ## Use
 
 ```text
+/partwise ux — why do owners start a claim and not finish it?
 /partwise site — redesign the whole Nook web app, keep the colors
 /partwise site next
 /partwise overhaul the login page
@@ -92,6 +94,7 @@ Under `skills/partwise/`:
 | `references/web.md`, `ios.md` | Platform rules | the mode in use |
 | `references/review.md` | Review and polish | `review`, `polish` |
 | `references/screen.md` | The part-by-part pipeline | `build`, `part` |
+| `references/ux.md` | UX research, and the flow scout brief | `ux` |
 | `references/site.md` | The whole product: map, flows, direction, system, plan | `site` |
 | `references/overhaul.md` | The whole process for one page | `overhaul` |
 | `references/frame.md` | The design file: what it holds, extract, new and fresh | `frame` |

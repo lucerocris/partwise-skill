@@ -29,6 +29,9 @@ The **Product** line decides the rest. A login page inside a listing app is
 part of that app; the same page on a marketing site belongs to the site.
 Name the kind before looking at any design.
 
+If `docs/ux/` has research covering this page's journey, read its findings
+for this page; they decide which parts to rethink in stage 3.
+
 Say the brief in chat in one block and carry on.
 
 ## 2. Direction

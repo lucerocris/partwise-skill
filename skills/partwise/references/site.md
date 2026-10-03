@@ -44,6 +44,9 @@ below are the main evidence here, so search 2-3 journeys, not 1-2), and keep
 the first version small: the fewest pages that let a person do each job end
 to end. List what was left out for later.
 
+If `docs/ux/` has research on these journeys, start from its recommended
+flows rather than redoing the work.
+
 Either way, write down:
 
 - **Pages:** every route, grouped into page types (index, list, detail,
