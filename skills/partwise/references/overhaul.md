@@ -29,6 +29,19 @@ Signature: <the one thing on this page a person would remember, tied to the
            explains itself, a form that previews its result>
 ```
 
+**Distinctiveness is set by the direction, not by parts.** An overhaul inside
+a direction modelled on common products (a listing app modelled on Airbnb)
+fixes fit, hierarchy and craft but keeps the template look: in testing,
+three overhauls of one page raised the total from 26 to 32 while
+distinctiveness never moved. If looking like the product's own thing is part
+of the goal, say so in the brief and run `frame` fresh first; part
+references from popular products pull toward the same template.
+
+The signature must also work with this record's real data. A facts row built
+for data most records lack fills prime space with "Not listed"; check how
+complete the data is before choosing one, and show unknowns as one short line
+rather than as cells.
+
 The signature line is required, and it must add something the page does not
 already say; a new way of showing a fact already on the page reads as a
 repeat and moves nothing. Prefer a signature that shows what only this

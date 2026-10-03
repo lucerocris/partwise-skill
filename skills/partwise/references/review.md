@@ -44,7 +44,11 @@ Working well
 - <one or two things to keep; say why>
 ```
 
-Each finding names a place and a change. "Spacing feels off" is not a
+Each finding names a place and a change.
+
+Judging from full-page screenshots misreads some things: sticky elements
+look like empty columns, pinned bars land mid-page, fades and hovers don't
+show. Before acting on such a finding, check it in the running page. "Spacing feels off" is not a
 finding; "the table sits 8px under the header but 32px above the footer;
 make both 24px" is. Do not pad: three real findings beat fifteen thin ones.
 
