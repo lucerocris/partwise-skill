@@ -6,11 +6,11 @@ Figma step. The references were saved in the project in step 5.
 ## Before writing anything
 
 - **Find what the project already has**: framework, styling approach, theme or
-  token file, existing components, icon library. That is the direction lock.
+  token file, existing components, icon library. That is the direction.
   A part spec says how a sidebar is arranged; the project says what a button,
   a color and a radius are. Reuse existing components before writing new ones.
-- **New project, nothing existing:** write the direction lock from step 2 as
-  the token file first (CSS variables, Tailwind theme, Flutter `ThemeData`,
+- **New project, nothing existing:** write the design file's color, type,
+  spacing and shape as the token file first (CSS variables, Tailwind theme, Flutter `ThemeData`,
   SwiftUI constants), then build against it. No raw color or spacing values
   inside components.
 - **Icons:** the project's icon library; if none, add one open set (Lucide for

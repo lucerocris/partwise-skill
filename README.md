@@ -11,6 +11,7 @@ It picks the smallest job that fits the request:
 | `build` | A new screen, or a full redesign |
 | `review` | A critique. Reports, changes nothing |
 | `polish` | A pre-ship pass on something already built |
+| `frame` | The site-level design: reader, character, page skeletons, rhythm, color, type, voice, in one design file. Extracted from what is built, or researched; and a fresh direction for an existing site when you ask for one |
 
 For `part` and `build` it designs part by part. The usual agent workflow with
 [Refero](https://refero.design) is "find screens like the page I'm building,
@@ -51,7 +52,25 @@ ln -s ~/partwise-skill/skills/partwise ~/.claude/skills/partwise
 /partwise review the checkout screen
 /partwise polish the onboarding flow, ios
 /partwise as a figma mockup: pricing page, in <figma url>
+/partwise frame                       # write the design file from what is built
+/partwise frame fresh, new direction  # research 3 new directions, you pick one
 ```
+
+### Frame and fresh directions
+
+Every job takes its direction from the project's design file (`design.md`,
+or whatever the project already uses). Nothing but `frame` changes it.
+
+- **`/partwise frame`** in a project with no design file writes one from what
+  is already built. No research, cheap.
+- **`/partwise frame`** in a new project, or **`/partwise frame fresh`** in an
+  existing one, researches three distinct directions in Refero and stops to
+  ask you to pick one. It also lists the rules it is carrying over (brand
+  marks, color meanings, product promises) so you can strike any. Then it
+  writes the new design file, on a branch, and rebuilds the most important
+  page in the new direction as proof. Other pages move over one per run.
+- Without the words "fresh", "new direction", "new look" or "redesign the
+  site", the existing design file always wins.
 
 ## What is in here
 
@@ -64,6 +83,8 @@ Under `skills/partwise/`:
 | `references/web.md`, `ios.md` | Platform rules | the mode in use |
 | `references/review.md` | Review and polish | `review`, `polish` |
 | `references/screen.md` | The part-by-part pipeline | `build`, `part` |
+| `references/frame.md` | The design file: what it holds, extract, new and fresh | `frame` |
+| `references/frame-scout.md` | Brief for the direction research subagent | frame scouts only |
 | `references/scout.md` | Brief for the per-part research subagent | scouts only |
 | `references/parts.md` | Catalog of parts and query wording | scouts only |
 | `references/code.md` | Building into a codebase | target `code` |

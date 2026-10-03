@@ -31,7 +31,7 @@ it covers the first section in more depth; the rest is specific to this skill.
 
 ## Fonts
 
-- **Web:** the direction lock's typeface if `figma.listAvailableFontsAsync()`
+- **Web:** the direction's typeface if `figma.listAvailableFontsAsync()`
   has it, otherwise Inter.
 - **iOS:** SF Pro can be listed and load without error and still render
   nothing. After creating the first text node, check it:

@@ -26,32 +26,22 @@ ImageMagick, curl, and a scratch folder. Figma MCP tools only for target
 | **File** | Target `figma` only: the Figma file and page. None given: `create_new_file`. |
 | **Existing references** | Target `code`: look for `docs/references/<screen>/README.md` in the project. Parts already recorded there are reused as they are: take the spec from the README and look at the saved crops with one `scripts/refsheet.sh` sheet. Scout only parts that are new, or that the user wants redone. |
 
-## 2. Lock the direction once
+## 2. Take the direction
 
-Job `part` in an existing project: the direction is whatever the project
-already uses. Skip to step 3.
+The direction is the project's design file. Read it: the page skeleton for
+this page type, the rhythm and the emphasis budget decide as much as the
+colors do, and parts are judged against them.
 
-Decide color, type, radius, spacing density and elevation for the whole screen
-as a short token list. Source, first that applies:
+- Job `part`: no design file is fine; use the project's tokens, theme and
+  components as they are.
+- Job `build` with no design file: run `frame` first (`frame.md`). In an
+  existing project that is a cheap extract; in a new project it researches
+  directions and asks the user to pick one.
+- Target `figma`: the Figma file's variables and styles count as its design
+  file when there is no file in a codebase.
 
-1. **What already exists.** Target `code`: the codebase's tokens, theme and
-   components. Target `figma`: the file's variables, styles and built
-   screens. Use it; research nothing.
-2. **Web:** one `refero_search_styles` query describing the feel ("calm
-   neutral admin with one accent"), `response_format: "md"`, then
-   `refero_get_style` on the single best hit. Styles come from marketing
-   pages: do not query by product domain, and expect palette, type and radius
-   only.
-3. **iOS:** Refero has no iOS styles. Take colors from one strong app in the
-   category: `refero_get_screen` on any one of its screens, read `Colors`
-   (`0xRRGGBB`). If category searches return only onboarding and paywalls,
-   search by app name. The rest is iOS convention: 44pt targets, 16-20pt
-   margins, safe areas.
-
-No source covers status colors, surface steps (canvas vs card) or data
-density. Decide them and list them as **guessed** with the references.
-
-Atoms (buttons, inputs, chips, icons) are defined here, never searched.
+Atoms (buttons, inputs, chips, icons) come from the direction, never from
+research.
 
 ## 3. Break the screen into parts
 
@@ -108,7 +98,7 @@ When the reports are in:
 - **Read each part's contact sheet** (one image per part). That is your look
   at the references; do not open the individual crops or the search results.
 - **Check the Took lines against rule 1.** Remove any that describe styling.
-- **Resolve clashes between parts** in favor of the direction lock.
+- **Resolve clashes between parts** in favor of the direction.
 - A part reported with fewer than three references stays that way.
 
 ## 5. Save the references
@@ -171,7 +161,7 @@ lock for every visual value. Use the user's real content, never a reference's
 copy, logos or product names. Name each part's frame as on the board.
 
 Then make the parts agree: one spacing scale, one radius, one type scale. Fix
-mismatches toward the direction lock, not toward the loudest reference.
+mismatches toward the direction, not toward the loudest reference.
 
 ## 7. Check and report
 

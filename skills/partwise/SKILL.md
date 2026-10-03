@@ -1,6 +1,6 @@
 ---
 name: partwise
-description: Main design skill for any UI work, web or iOS, in code (default) or Figma. Use for designing, building, redesigning, restyling, fixing, polishing or reviewing a screen, page, section or component - dashboards, app screens, forms, tables, navigation, modals, landing pages, empty states - and for requests like "make this look better", "design this", "polish this", "review this UI", "what's wrong with this screen". Picks the smallest job that fits (tweak, part, build, review, polish). For new screens and components it designs part by part - breaking the screen into parts, finding three real-product references per part in Refero, cropping and saving them, then building from them - so the result is not a generic average. Carries its own craft floor for typography, color, spacing, states, motion and accessibility. Uses the Refero MCP for research; the Figma MCP only when a Figma mockup is asked for.
+description: Main design skill for any UI work, web or iOS, in code (default) or Figma. Use for designing, building, redesigning, restyling, fixing, polishing or reviewing a screen, page, section or component - dashboards, app screens, forms, tables, navigation, modals, landing pages, empty states - and for requests like "make this look better", "design this", "polish this", "review this UI", "what's wrong with this screen". Picks the smallest job that fits (tweak, part, build, review, polish, frame). Frame sets the site-level design - reader, character, page skeletons, rhythm, color, type, voice - in one design file, extracted from an existing project or researched fresh, including a deliberate new direction for an existing site when asked for ("fresh", "new direction", "new look"). For new screens and components it designs part by part - breaking the screen into parts, finding three real-product references per part in Refero, cropping and saving them, then building from them - so the result is not a generic average. Carries its own craft floor for typography, color, spacing, states, motion and accessibility. Uses the Refero MCP for research; the Figma MCP only when a Figma mockup is asked for.
 ---
 
 # Partwise
@@ -33,6 +33,7 @@ Do not ask; pick, and escalate later if it turns out too small.
 | **build** | A new screen, or a screen redesigned from scratch. A flow of several screens is one build per screen, sharing one direction | One scout per part | `screen.md` + `craft.md` + platform page |
 | **review** | "What's wrong with this", critique, audit. Reports; changes nothing | None | `review.md` + `craft.md` + platform page |
 | **polish** | "Make this better", pre-ship pass on something already built | None, unless a part's structure is the problem | `review.md` + `craft.md` + platform page |
+| **frame** | Setting the site-level design: "set up the design", "what should this site look like", or a fresh direction for an existing site ("fresh", "new direction", "new look", "redesign the site") | Extract: none. New or fresh: one frame scout | `frame.md` |
 
 All of these are in `references/`. Platform page: `web.md` or `ios.md`.
 `screen.md` names the further files it needs as it goes (`code.md`, or
@@ -44,6 +45,9 @@ All of these are in `references/`. Platform page: `web.md` or `ios.md`.
   that one part as job `part`.
 - Never run the reference research for a tweak, review or polish. It is the
   expensive step and those jobs do not need it.
+- A `build` in a project with no design file runs `frame` first: extract it
+  from what is built, or, in a new project, research it. A `part` does not;
+  it uses the project's tokens.
 
 ## Settle before starting
 
@@ -51,7 +55,7 @@ All of these are in `references/`. Platform page: `web.md` or `ios.md`.
 |---|---|
 | **Mode** | `web` or `ios`. `ios` means any native mobile app; its page is written for iPhone, so on an Android-first project keep its structure and touch rules and use Material's controls and type. Named by the user, else from the project (SwiftUI, Flutter, React Native are `ios`), else from the request: "app", "tab bar", "sheet" mean `ios`. No project and no cue: ask, it is one short question and everything depends on it. Both wanted: do the job once per mode. |
 | **Target** | Where the work lands. **`code` by default.** `figma` only when the user asks for a Figma design or mockup. Never both: designing in Figma and then building in code pays for the screen twice. No codebase in the working directory: build `code` as a new standalone project. |
-| **Direction** | The visual decisions in force. In an existing project: its tokens, theme and components, as they are. Only a new project, or a redesign the user asked for, gets a new direction (`screen.md` step 2). |
+| **Direction** | The visual decisions in force: the project's design file (see `frame.md`), else its tokens, theme and components, as they are. Only a new project, or a fresh direction the user asked for in so many words, gets a new one, and only through `frame`. No other job edits the design file. |
 
 ## Before any UI edit
 

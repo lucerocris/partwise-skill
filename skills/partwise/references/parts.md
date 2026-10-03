@@ -59,7 +59,7 @@ match unrelated screens.
 ## Do not search for
 
 Button, text input, checkbox, toggle, avatar, badge, icon, divider, tooltip.
-Every screen has them, so results are noise. Define them in the direction lock.
+Every screen has them, so results are noise. Define them in the direction.
 
 One exception: an atom in an unusual **state or arrangement** is a part.
 "Button group with split dropdown" or "OTP code input with paste" search well,
