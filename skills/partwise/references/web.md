@@ -71,3 +71,7 @@ Screenshot traps that look like design defects:
   loads, and remember pinned bars appear mid-image in a full-page capture.
 - Subtle effects (a fade, a focus ring, a hover) rarely show in a
   screenshot; confirm them with computed styles instead of by eye.
+- A full-page capture can show a pinned bar that is hidden at load (it
+  shows only after scrolling), and a phone capture can crop the scrollbar's
+  width so content looks flush with the right edge. Check both in the
+  running page, and tell anyone judging the screenshots about them.

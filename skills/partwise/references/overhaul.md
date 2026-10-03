@@ -128,6 +128,15 @@ whole page:
 - **Every empty state.** Each "none yet" on the page says what belongs there
   and offers the next step, whether or not its part was rethought.
 - **The signature** from the brief is visible in the first screen.
+- **Real data at its longest.** Fill each grid, card and row with the
+  longest real value it can get. A cell that wraps to three lines makes the
+  rows uneven, so cap it at two: show the first values as written and "+N"
+  for the rest. Do not paraphrase real values to make them fit; judges read
+  that as content drift. Collapse repeated rows into ranges ("Mon – Sat"
+  rather than six identical lines) and keep today marked in the range.
+- **Third-party widgets in their default state.** Maps, embeds and players
+  load with their own defaults (an expanded credit line, a cookie bar, a
+  large control). Look at each one after it loads and set it to fit the page.
 
 Then report:
 
