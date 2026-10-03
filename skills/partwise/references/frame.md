@@ -82,6 +82,10 @@ Rules with a reason outside taste: brand marks, meanings of colors,
 accessibility commitments, things the product promises. These survive a
 fresh direction unless the user strikes them.
 
+## Components and states
+Where the system lives in code: token file, component folder, states sheet
+route. Written by the `site` job; absent until it runs.
+
 ## Exceptions
 Craft-floor rules this product deliberately breaks, each with its reason.
 ```
