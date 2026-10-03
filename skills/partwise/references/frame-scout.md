@@ -50,6 +50,10 @@ for one, and then say why.
 
 For each direction, three whole-page images on one sheet: its primary
 source's main page plus two more that show the same feel on other page types.
+At least one of the three must be a working product screen of a page type
+this product has (a list, a workbench, a settings page), not a marketing page:
+styles come from marketing sites, and a direction the user picks must show
+how an actual screen of theirs would look.
 
 ```bash
 <skill>/scripts/refsheet.sh <scratch>/direction-<n>.png \
