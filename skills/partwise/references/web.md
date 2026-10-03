@@ -62,3 +62,12 @@ serving old CSS after edits (the file watcher misses them). If a style change
 does not show, restart the server and clear its cache (`.next/` for Next.js)
 before assuming the code is wrong. Measure in the page (computed font,
 element positions) to confirm the change is live.
+
+Screenshot traps that look like design defects:
+
+- Load the page fresh at each width. Resizing after load leaves maps and
+  canvases drawn for the old size (a half-blank map).
+- Scroll through the page before a full-page screenshot so lazy content
+  loads, and remember pinned bars appear mid-image in a full-page capture.
+- Subtle effects (a fade, a focus ring, a hover) rarely show in a
+  screenshot; confirm them with computed styles instead of by eye.

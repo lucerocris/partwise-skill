@@ -23,7 +23,14 @@ Product:  <what kind of product this is: listing app, tool, marketing site,
 Reader:   <who, how often, on what device>
 Keep:     <what must survive: brand colors, logo, fonts, copy, flows; from
            the request and the design file's constraints>
+Signature: <the one thing on this page a person would remember, tied to the
+           job: a live "closes in 2 h", a facts-at-a-glance row, a drawn
+           timeline; not decoration>
 ```
+
+The signature line is required. Fixing every problem still leaves a page
+that reads as a template: in testing, overhauls raised every score except
+distinctiveness until a signature was chosen up front.
 
 The **Product** line decides the rest. A login page inside a listing app is
 part of that app; the same page on a marketing site belongs to the site.
@@ -65,6 +72,13 @@ into three piles:
 - **Rethink**: the structure is the problem, or the part is new, or it is the
   part the user named. These, and only these, get reference research.
 
+Before sorting, judge the **first screen as a whole**, at phone width and at
+desktop width, against the brief's Job line: can a person answer the job's
+questions without scrolling? A part can be fine on its own and the first
+screen still miss something (the facts people decide on sitting one screen
+down); that missing piece goes to whichever part should hold it, as rethink
+or restyle.
+
 Most overhauls have one to three parts to rethink. Researching a part that
 was already right is the most common waste: say which pile each part went in
 and why.
@@ -81,7 +95,18 @@ Build as `screen.md` step 6 says (`code.md` or `figma.md`): rethought parts
 from their references, the rest restyled, everything from the design file's
 tokens. Save references as `screen.md` step 5 says.
 
-Check in bounded passes (SKILL.md). Then report:
+Check in bounded passes (SKILL.md), and on that look also check, across the
+whole page:
+
+- **Repeats.** The same action or fact appearing more than once in one
+  screen (Get directions in the title and in a pinned bar; open status in
+  the header, the side card and the hours). Parts that are right alone add
+  up to this; keep each where it does most and remove the rest.
+- **Every empty state.** Each "none yet" on the page says what belongs there
+  and offers the next step, whether or not its part was rethought.
+- **The signature** from the brief is visible in the first screen.
+
+Then report:
 
 ```text
 Brief:      <the five lines, shortened>
