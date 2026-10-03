@@ -35,8 +35,16 @@ separate page skeletons and rhythm; write that down here.
 
 ## 2. Map
 
-From the code (routes, layouts, navigation) and a quick look at the running
-app:
+**Existing app:** from the code (routes, layouts, navigation) and a quick look
+at the running app.
+
+**New app, nothing built:** from the brief. Plan the pages each job needs,
+using how real products of this kind are organized (the flow references
+below are the main evidence here, so search 2-3 journeys, not 1-2), and keep
+the first version small: the fewest pages that let a person do each job end
+to end. List what was left out for later.
+
+Either way, write down:
 
 - **Pages:** every route, grouped into page types (index, list, detail,
   form, settings, auth, marketing, empty or error). One line each.
@@ -59,7 +67,10 @@ keeping their fonts if the request did not say.
 
 ## 4. Design system
 
-Turn the design file into code the pages will share. In the project's own
+Turn the design file into code the pages will share. In a new app, set up the
+project first in the stack the user named, or the most ordinary one for the
+platform (Next.js with Tailwind on web, SwiftUI on iOS) if they named none,
+and say which. In the project's own
 stack and conventions; extend what exists rather than starting a parallel set.
 
 - **Tokens:** color roles, type scale, spacing, radius, elevation, motion, as
