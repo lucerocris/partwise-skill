@@ -328,3 +328,8 @@ The craft floor draws on rules that recur across published agent design
 skills, restated here: Refero's `refero-design` (MIT), Paul Bakaus's
 `impeccable` (Apache-2.0), Anthropic's `frontend-design`, Vercel's web
 interface guidelines and Emil Kowalski's design engineering skills.
+
+The `ux` job's methods come from published practice: Nielsen Norman Group
+(cognitive walkthrough, PURE, severity ratings, journey mapping), the GOV.UK
+Design System's question-page patterns, W3C WCAG 2.2, Google's HEART
+framework, lawsofux.com, and the evidence labels in ux-crux (MIT).
