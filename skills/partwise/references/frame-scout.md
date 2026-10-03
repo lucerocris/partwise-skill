@@ -22,8 +22,9 @@ image files. Always `response_format: "md"`.
 
 - **Start from the product's kind.** Name what kind of product it is first
   (listing/marketplace, workspace tool, marketing site, content site, store)
-  and name 4-6 strong real products of that kind (a cafe finder: Airbnb,
-  Yelp, Tripadvisor, Resy, Beli, Google Maps). Every direction must be one a
+  and name 4-6 strong real products of that kind (a place finder: Airbnb,
+  Yelp, Google Maps; a team tool: Linear, Notion, Slack; a store: Shopify
+  themes, Glossier, Allbirds). Every direction must be one a
   product of that kind could ship: a listing app's home is a browsing
   surface (many items, photos, filters, fast scanning), not an editorial
   page. A feel that suits a different kind of product is out, however good.

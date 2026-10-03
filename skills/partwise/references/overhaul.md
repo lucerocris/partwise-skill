@@ -24,15 +24,16 @@ Reader:   <who, how often, on what device>
 Keep:     <what must survive: brand colors, logo, fonts, copy, flows; from
            the request and the design file's constraints>
 Signature: <the one thing on this page a person would remember, tied to the
-           job: a live "closes in 2 h", a facts-at-a-glance row, a drawn
-           timeline; not decoration>
+           job and not decoration: a listing's facts-at-a-glance row, a
+           dashboard's one live number, a checkout's running total that
+           explains itself, a form that previews its result>
 ```
 
 The signature line is required, and it must add something the page does not
-already say: a countdown next to "until 10:00 PM" read as the same fact
-twice and moved nothing. Prefer a signature that shows this product's own
-knowledge (for Nook: facts other apps don't have, like outlets or quiet
-hours). Fixing every problem still leaves a page
+already say; a new way of showing a fact already on the page reads as a
+repeat and moves nothing. Prefer a signature that shows what only this
+product knows or does: the data competitors don't have, the decision it
+makes easier, its own vocabulary. Fixing every problem still leaves a page
 that reads as a template: in testing, overhauls raised every score except
 distinctiveness until a signature was chosen up front.
 
@@ -103,12 +104,11 @@ Check in bounded passes (SKILL.md), and on that look also check, across the
 whole page:
 
 - **Repeats.** The same action or fact appearing more than once in one
-  screen (Get directions in the title and in a pinned bar; open status in
-  the header, the side card and the hours). Parts that are right alone add
-  up to this. The page's primary action stays in the main block under the
-  title, where people look first; remove repeats from pinned bars, side
-  cards and lower sections instead. (Tested: taking Get directions out of
-  the title to avoid a repeat with the pinned bar cost a point on desktop.)
+  screen (the primary button in the header and again in a pinned bar; a
+  status shown in the header, a side card and a section below). Parts that
+  are right alone add up to this. The page's primary action stays in the
+  main block under the title, where people look first; remove repeats from
+  pinned bars, side cards and lower sections instead.
 - **Every empty state.** Each "none yet" on the page says what belongs there
   and offers the next step, whether or not its part was rethought.
 - **The signature** from the brief is visible in the first screen.
