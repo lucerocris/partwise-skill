@@ -40,7 +40,10 @@ references from popular products pull toward the same template.
 The signature must also work with this record's real data. A facts row built
 for data most records lack fills prime space with "Not listed"; check how
 complete the data is before choosing one, and show unknowns as one short line
-rather than as cells.
+rather than as cells. Every value in it should be specific ("Solo work /
+study", "Closed Sundays"), never a generic filler like "Yes" or "Good for
+it" that the reader has to decode. (Tested: removing unknown cells and
+adding one specific fact moved the page from 31 to about 34.)
 
 The signature line is required, and it must add something the page does not
 already say; a new way of showing a fact already on the page reads as a
