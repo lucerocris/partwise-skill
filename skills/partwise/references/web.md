@@ -56,3 +56,9 @@ available: load the page, wait for it to settle, screenshot at 1440 and 390,
 then look. Browser tools often only write inside their own folder; save
 there. Check the console for errors while there, ignoring a missing favicon
 and dev-server noise.
+
+A dev server running in a git worktree or other copied folder can keep
+serving old CSS after edits (the file watcher misses them). If a style change
+does not show, restart the server and clear its cache (`.next/` for Next.js)
+before assuming the code is wrong. Measure in the page (computed font,
+element positions) to confirm the change is live.

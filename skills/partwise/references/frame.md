@@ -19,6 +19,15 @@ The design file is whichever the project already has (`design.md`,
 `DESIGN.md`, `docs/design.md`, a design section in `CLAUDE.md`). None: create
 `design.md` at the project root.
 
+**The direction must fit the kind of product.** Before adopting or
+researching one, name the product's kind (listing app, tool, marketing page,
+content site, store) and check the direction against real products of that
+kind. A sibling site's design file is not automatically right: a business
+marketing landing and the consumer listing app it serves share colors, type
+and voice, not page skeletons or rhythm. (Learned 2026-10-03: an editorial
+"printed guide" direction from the Nook business landing was put on the
+cafe-listing web app and rejected because it did not read as a listing app.)
+
 **Fresh is only ever on request.** Words like "fresh", "new direction", "new
 look", "redesign the site", "start the design over" switch it on. Without
 them the design file wins, and no other job may change it.

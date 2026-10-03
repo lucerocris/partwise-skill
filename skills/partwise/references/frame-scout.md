@@ -20,12 +20,19 @@ image files. Always `response_format: "md"`.
 
 ## 1. Gather candidates
 
-- **Web:** 3 `refero_search_styles` queries describing a feel, not the
-  product's domain ("calm dense workspace with one accent", "editorial black
-  and white with ruled lists", "warm tactile study tool"). Use the user's
-  words if they gave any. Then 2 `refero_search_screens` queries for the main
-  page type, written as its skeleton ("index page listing items as ruled
-  rows with progress", "dashboard home with activity and shortcuts").
+- **Start from the product's kind.** Name what kind of product it is first
+  (listing/marketplace, workspace tool, marketing site, content site, store)
+  and name 4-6 strong real products of that kind (a cafe finder: Airbnb,
+  Yelp, Tripadvisor, Resy, Beli, Google Maps). Every direction must be one a
+  product of that kind could ship: a listing app's home is a browsing
+  surface (many items, photos, filters, fast scanning), not an editorial
+  page. A feel that suits a different kind of product is out, however good.
+- **Web:** 2 `refero_search_screens` queries for the main page type in that
+  product kind, written as its skeleton ("place listing home with search,
+  category filters and photo cards", "search results list beside a map").
+  Then 3 `refero_search_styles` queries for feel *within* that kind
+  ("calm photo-led listing site with one accent", "dense practical directory
+  with ratings"). Use the user's words if they gave any.
 - **iOS:** Refero has no iOS styles. 3 `refero_search_screens` queries for the
   main screen type, then pick strong apps from the hits and look at 2-3
   screens of each (`refero_get_similar_screens`), since what stays the same
