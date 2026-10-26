@@ -11,6 +11,7 @@ It picks the smallest job that fits the request:
 | `build` | A new screen, or a full redesign |
 | `review` | A critique. Reports, changes nothing |
 | `polish` | A pre-ship pass on something already built |
+| `tells` | Finds the common marks that make a design look AI-made, reports them, then asks whether to remove, replace or keep each group |
 | `ux` | Research only: journeys as they are, three real flows each from Refero, ranked findings, a recommended flow, and what to test with real people. Saved to `docs/ux/` for `site` and `overhaul` to use |
 | `site` | The whole product, top down: page map and flows, art direction, design system (tokens, components, every state, a states sheet), and a page plan run as overhauls. `site next` continues the plan |
 | `overhaul` | One page, the whole process from one line: context and product kind, art direction, which parts need rethinking, then build and check |
@@ -288,7 +289,7 @@ Reads `docs/references/<page>/` first and only researches what is new.
 
 | Job | Research | Tokens (measured where noted) |
 |---|---|---|
-| tweak, review, polish | none | small; polish ~80k (measured) |
+| tweak, review, polish, tells | none | small; polish ~80k (measured) |
 | part | one helper | ~80-100k on a mid-tier model (measured) |
 | overhaul | one helper per part to rethink | ~80-100k per rethought part |
 | frame fresh, site direction | one helper | ~90-105k (measured) |
@@ -309,6 +310,7 @@ Under `skills/partwise/`:
 | `references/craft.md` | The craft floor | every job that edits or judges UI |
 | `references/web.md`, `ios.md` | Platform rules | the mode in use |
 | `references/review.md` | Review and polish | `review`, `polish` |
+| `references/tells.md` | The AI-look checklist and the ask-before-fixing flow | `tells` |
 | `references/screen.md` | The part-by-part pipeline | `build`, `part` |
 | `references/ux.md` | UX research, and the flow scout brief | `ux` |
 | `references/site.md` | The whole product: map, flows, direction, system, plan | `site` |
