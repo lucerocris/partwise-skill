@@ -91,7 +91,8 @@ or a chosen reference specifically calls for one:
   with one neon accent
 - gradient text; glass or blur as decoration
 - cards inside cards; a grid of identical cards with the same soft shadow
-- a colored bar down the left edge of a card
+- a colored bar down the left edge of a card, or as the selected/active
+  marker on list rows, nav items, palettes and menus
 - a small all-caps label above every heading
 - numbered markers (01, 02, 03) on things that are not a sequence
 - a hero made of a giant number and a caption
