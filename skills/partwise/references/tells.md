@@ -14,9 +14,13 @@ chose it on purpose.
 Look at the rendered thing (SKILL.md, Checking: one batch, 1440 and 390),
 then grep the source for what a screenshot can't show (fonts, `box-shadow`,
 `backdrop-filter`, `—`, `gradient`, hover rules, `italic`, `monospace`,
-`border-radius`, `tabular-nums`, raw px and hex values outside the tokens).
-Go through the list below. Count a tell only when it is actually there, with
-a place (`file:line` or which part). Skip what the screen cannot have: no skeleton check on a static
+`border-radius`, `tabular-nums`, raw px and hex values outside the tokens,
+and edge bars: `border-left`, `border-inline-start`, `inset <n>px 0 0`
+shadows, narrow `::before` bars, `linear-gradient(to right, <accent> <n>px`).
+Look at the selected, active and hover state of every list, menu, nav,
+sidebar, palette and table, not just the default. Go through the list below.
+Count a tell only when it is actually there, with a place (`file:line` or
+which part). Skip what the screen cannot have: no skeleton check on a static
 page, no pricing check on a screen with no prices.
 
 ## 2. The list
@@ -24,7 +28,7 @@ page, no pricing check on a screen with no prices.
 | Group | Tells |
 |---|---|
 | **Color** | Harsh or rainbow gradients; purple-and-black; neon; default pastels; pure `#fff` page background with nothing else behind it; all gray with no accent color to pick out what matters; low-contrast gray body or secondary text |
-| **Surface** | Drop shadow on everything; liquid glass / heavy blur; soft radius on everything; radial orbs or blurred blobs; dot grids; colored stripe on the edge or top of cards; hover animation on every element; decoration with no job (ornament lines, glows, extra frames); nested corners where inner radius isn't outer radius minus padding |
+| **Surface** | Drop shadow on everything; liquid glass / heavy blur; soft radius on everything; radial orbs or blurred blobs; dot grids; colored stripe on the edge or top of cards, or as the selected/active marker on list rows, sidebar and nav items, palettes, menus and table rows; hover animation on every element; decoration with no job (ornament lines, glows, extra frames); nested corners where inner radius isn't outer radius minus padding |
 | **Layout** | Three feature cards in a row; bento grid; three pricing tiers; a fake terminal window as decoration; every item the same size, so the main feature doesn't stand out; borders, boxes or dividers doing the grouping that spacing should do; the main CTA styled the same as everything around it; things centered by their box, not by eye (play icons, icons beside text) |
 | **Type** | Inter, Geist or Space Grotesk chosen as the default, not by the design file; random words in italics; monospace on text that isn't code or data; headlines that wrap badly (one word alone on the last line, a break mid-phrase); numbers that change or stack in columns (prices, stats, tables, timers) without tabular figures |
 | **Icons and marks** | Loose icons beside every item; emoji as icons; sparkle icons; animated arrows; checkmark bullet lists; filler badges and pills ("New", "AI-powered", "Beta" with nothing behind it); icons mixed from different sets, sizes or stroke weights |
@@ -53,7 +57,8 @@ Not present: <one line, the groups that came up clean>
 
 Each suggestion is concrete: "replace the three-card row with one row of
 text and a single product screenshot", "swap the rainbow gradient for the
-accent token", "rewrite 'it's not a tool, it's a team' as what the team
+accent token", "mark the selected row with a plain background fill and ink
+text, not an edge bar", "rewrite 'it's not a tool, it's a team' as what the team
 does". For the missing-real-thing group the fix is rarely code: say what
 the user has to supply (a real quote with a name, a screenshot, the legal
 text) and offer a labelled placeholder only if they want one.
